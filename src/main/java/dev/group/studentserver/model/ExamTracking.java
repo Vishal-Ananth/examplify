@@ -10,10 +10,10 @@ public class ExamTracking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(mappedBy = "rollnumber")
+    @OneToOne
     private Student student;
 
-    @OneToOne(mappedBy = "subCode")
+    @OneToOne
     private Subject subject;
 
     private String answerScriptId;

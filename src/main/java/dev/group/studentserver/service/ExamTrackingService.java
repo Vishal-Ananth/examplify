@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import dev.group.studentserver.model.*;
 
+import java.util.List;
+
 @Service
 public class ExamTrackingService {
 
@@ -29,5 +31,9 @@ public class ExamTrackingService {
 
         return "Register Number "+examinee.getRollNumber()+" writing "+course.getSubCode()+" has been linked to answer script";
 
+    }
+
+    public List<ExamTracking> getAllTrackingTicket() {
+        return examTrackingRepository.findAll();
     }
 }
