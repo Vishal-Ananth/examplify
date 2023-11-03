@@ -28,4 +28,9 @@ public class SubjectController {
         return "Subject added to database";
     }
 
+    @GetMapping("{subCode}")
+    public Subject getSubjectByCode(@PathVariable String subCode){
+        return subjectService.getSubjectByCode(subCode);
+    }
+
 }

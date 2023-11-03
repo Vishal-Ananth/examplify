@@ -22,4 +22,8 @@ public class SubjectService {
     public void createSubject(Subject subject) {
         subjectRepository.save(subject);
     }
+
+    public Subject getSubjectByCode(String subCode) {
+        return subjectRepository.findBySubCode(subCode);
+    }
 }
