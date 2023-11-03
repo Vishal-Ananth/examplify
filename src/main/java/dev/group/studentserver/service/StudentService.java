@@ -22,7 +22,7 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public Student findStudentByRollNumber(Integer rollnumber) {
-        return studentRepository.findByRollNumber(rollnumber);
+    public Student findStudentByRollNumber(Integer rollNumber) {
+        return studentRepository.findByRollNumber(rollNumber);
     }
 }

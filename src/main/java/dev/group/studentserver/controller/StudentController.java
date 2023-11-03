@@ -28,9 +28,9 @@ public class StudentController {
         return "Student added to database";
     }
 
-    @PostMapping("{rollnumber}")
-    public Student findStudentByRollNumber(@PathVariable Integer rollnumber){
-        return studentService.findStudentByRollNumber(rollnumber);
+    @GetMapping("{rollNumber}")
+    public Student findStudentByRollNumber(@PathVariable Integer rollNumber){
+        return studentService.findStudentByRollNumber(rollNumber);
     }
 
 }
