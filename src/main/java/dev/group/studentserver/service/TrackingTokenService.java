@@ -1,6 +1,6 @@
 package dev.group.studentserver.service;
 
-import dev.group.studentserver.dao.ExamTrackingRepository;
+import dev.group.studentserver.dao.TrackingTokenRepository;
 import org.springframework.stereotype.Service;
 
 import dev.group.studentserver.model.*;
@@ -8,32 +8,32 @@ import dev.group.studentserver.model.*;
 import java.util.List;
 
 @Service
-public class ExamTrackingService {
+public class TrackingTokenService {
 
     private final StudentService studentService;
     private final SubjectService subjectService;
 
-    private final ExamTrackingRepository examTrackingRepository;
+    private final TrackingTokenRepository trackingTokenRepository;
 
-    public ExamTrackingService(StudentService studentService, SubjectService subjectService, ExamTrackingRepository examTrackingRepository) {
+    public TrackingTokenService(StudentService studentService, SubjectService subjectService, TrackingTokenRepository trackingTokenRepository) {
         this.studentService = studentService;
         this.subjectService = subjectService;
-        this.examTrackingRepository = examTrackingRepository;
+        this.trackingTokenRepository = trackingTokenRepository;
     }
 
 
     public String createTrackingTicket(Integer rollNumber, String subCode, String answerScriptId) {
         Student examinee = studentService.findStudentByRollNumber(rollNumber);
         Subject course = subjectService.getSubjectByCode(subCode);
-        ExamTracking examTracking = new ExamTracking(examinee,course,answerScriptId);
+        TrackingToken examTracking = new TrackingToken(answerScriptId,examinee,course);
 
-        examTrackingRepository.save(examTracking);
+        trackingTokenRepository.save(examTracking);
 
         return "Register Number "+examinee.getRollNumber()+" writing "+course.getSubCode()+" has been linked to answer script";
 
     }
 
-    public List<ExamTracking> getAllTrackingTicket() {
-        return examTrackingRepository.findAll();
+    public List<TrackingToken> getAllTrackingTicket() {
+        return trackingTokenRepository.findAll();
     }
 }

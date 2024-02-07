@@ -14,7 +14,7 @@ public class Student {
     private String degree;
     private String department;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @OneToMany (cascade = CascadeType.MERGE)
     private List<Subject> currentCoursesEnrolled;
 
     public Student(Integer rollNumber, String name, String degree, String department,List<Subject> currentCoursesEnrolled) {
