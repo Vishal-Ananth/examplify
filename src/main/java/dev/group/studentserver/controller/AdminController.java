@@ -4,6 +4,8 @@ package dev.group.studentserver.controller;
 import dev.group.studentserver.model.Admin;
 import dev.group.studentserver.service.AdminService;
 import org.springframework.stereotype.Controller;
+
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -16,17 +18,16 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @GetMapping("/showFormForLogin")
-    public String showFormForAdd() {
+    @GetMapping("/showLoginForm")
+    public String adminPage(Model model) {
+        model.addAttribute("admin", new Admin());
         return "login/admin-login";
     }
 
     @PostMapping("/verify")
     public String checkAdmin(@ModelAttribute("admin") Admin admin){
-        adminService.checkAdmin(admin);
-        System.out.println(admin.getUsername());
-        System.out.println(admin.getPassword());
-        return "helloPage";
+        System.out.println(admin);
+        return adminService.checkAdmin(admin);
     }
 
 

@@ -15,11 +15,18 @@
 <div class="container">
     <h1>Login</h1>
     <form th:action="@{/admin/verify}" th:object = "${admin}" method="post" >
-        <input type="text" th:field = "*{username}" placeholder="username" required>
+        <label>Username :
+            <input type="text" th:field="*{username}" placeholder="username" required >
+        </label>
         <br>
-        <input type="password" th:field="*{password}" placeholder="password" required >
+        <label>Password :
+            <input placeholder="password"
+                   required
+                   th:field="*{password}"
+                   type="password">
+        </label>
         <br>
-        <button type="submit">Login</button>
+        <button type="submit" class = "btn btn-info col-2">Login</button>
     </form>
 </div>
 </body>
