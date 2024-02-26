@@ -7,7 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/student")
+@RequestMapping("student")
 public class StudentController {
 
     private final StudentService studentService;

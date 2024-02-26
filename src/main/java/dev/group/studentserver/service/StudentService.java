@@ -1,28 +1,13 @@
 package dev.group.studentserver.service;
 
-import dev.group.studentserver.dao.StudentRepository;
 import dev.group.studentserver.model.Student;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class StudentService {
-    private final StudentRepository studentRepository;
+public interface StudentService {
+    List<Student> getAllStudents();
 
-    public StudentService(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
-    }
+    void createStudent(Student student);
 
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
-    }
-
-    public void createStudent(Student student) {
-        studentRepository.save(student);
-    }
-
-    public Student findStudentByRollNumber(Integer rollNumber) {
-        return studentRepository.findByRollNumber(rollNumber);
-    }
+    Student findStudentByRollNumber(Integer rollNumber);
 }
