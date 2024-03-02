@@ -1,10 +1,7 @@
 package dev.group.studentserver.controller;
-
-
 import dev.group.studentserver.model.Admin;
 import dev.group.studentserver.service.AdminService;
 import org.springframework.stereotype.Controller;
-
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +27,8 @@ public class AdminController {
         return adminService.checkAdmin(admin);
     }
 
-
     @GetMapping("/test")
     public String showHelloPage(){
         return "helloPage";
     }
-
-
-
 }
