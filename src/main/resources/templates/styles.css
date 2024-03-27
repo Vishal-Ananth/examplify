@@ -1,63 +1,59 @@
 body {
     background-color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0%;
 }
-a {
-    text-decoration: none;
-    color: white;
-  }
 
-.sidebar{
-    background-color: #810081;
-    color: #ffffff;
-    width: 15%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-height: 800px;
-    font-size: 18px;
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:hsl(0, 0%, 98%);
+    margin-bottom: 10px;
+    height: 110px;
+}
+
+#logo{
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.main-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    position: relative;
+}
+
+.main-menu-option{
+    background-color:hsl(0, 0%, 98%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 5px;
+    margin: 15px;
+    border: solid;
+    border-width: 1.5px;
+    border-color: black;
+    border-radius: 10px;   
 }
 
-#logo{
-    
-
+.main-menu-option:hover{
+    background-color:hsl(0, 0%, 80%);
 }
 
-.sidebar:hover{
-    background-color: hsl(300, 100%, 24%);
-}
-
-#logo{
-    width: 100%;
-    
-}
-
-.side-contents{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-}
-
-
-
-.side-menu-options{
-    padding-top: 35px;
-    padding-bottom: 35px;
-    width: 70%;
-    border-radius: 10px;
-    text-align: left;
-    padding-left: 25px;
-    padding-right: 25px;
-    
-}
-
-.side-menu-options:hover{
-    background-color: hsl(300, 100%, 22%);
-    cursor: pointer;
+#main-menu-option-img{
+    height: 200px;
+    width: 200px;
 }
 
