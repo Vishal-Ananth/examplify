@@ -4,9 +4,14 @@ import java.util.List;
 import dev.group.studentserver.model.Student;
 import dev.group.studentserver.service.StudentService;
 import jakarta.transaction.Transactional;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("student")
 public class StudentController {
 
@@ -16,7 +21,7 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/all")
+    @GetMapping(path = "/all")
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
@@ -28,7 +33,7 @@ public class StudentController {
         return "Student added to database";
     }
 
-    @GetMapping("{rollNumber}")
+    @GetMapping(value = "{rollNumber}")
     public Student findStudentByRollNumber(@PathVariable Integer rollNumber){
         return studentService.findStudentByRollNumber(rollNumber);
     }

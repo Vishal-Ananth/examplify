@@ -59,8 +59,18 @@
             <version>2.5.0</version>
         </dependency>
 
-<!--        Spring web security-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.dataformat</groupId>-->
+<!--            <artifactId>jackson-dataformat-xml</artifactId>-->
+<!--        </dependency>-->
 
+
+        <!--        web jars-->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>htmx.org</artifactId>
+            <version>2.0.0-alpha2</version>
+        </dependency>
     </dependencies>
 
 
