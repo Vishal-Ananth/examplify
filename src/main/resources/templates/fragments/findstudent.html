@@ -2,11 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
     <title>Specific student</title>
 </head>
 <body>
+    <h1>Hi</h1>
     <div>
-
+        <form th:action="@{/student/search/{rollnumber}}"
+              th:object="${students}"
+              method="post">
+            <label>Rollnumber
+                <input type="text"
+                       placeholder="rollnumber">
+            </label>
+            <button type="submit"
+                    hx-post="http://localhost:8080/student/search/201401001"
+                    hx-swap="innerHTML"
+                    hx-target="#display-region"
+                    hx-on:after-request="alert('Request sent!')"
+            > Search </button>
+        </form>
     </div>
 </body>
 </html>

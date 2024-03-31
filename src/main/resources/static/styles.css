@@ -69,6 +69,7 @@ a{
     position:fixed;
     top: 110px;
     left: 5px;
+    bottom: 3%;
     border: solid;
     border-color: black;
     border-width: 2px;
@@ -91,11 +92,18 @@ a{
 }
 
 #display-region{
-    position: relative;
-    top: 150px;
-    left: 15%;
-    right: 3%;
-    display: flex;
-    align-items: center;
+    border: solid;
+    border-width: 2px;
+    
+    position: fixed;
+    top: 110px;
+    left: 14%;
+    right: 2%;
+    bottom: 3%;
+    position: fixed;
     overflow: auto;
+    
+}
+
+.student-data{
 }

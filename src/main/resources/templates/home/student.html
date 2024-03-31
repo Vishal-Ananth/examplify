@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:hx-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,12 +24,21 @@
                      Student Information
                 </div>
 
+                <div class="side-menu-option"
+                     hx-get="http://localhost:8080/student/findRoll"
+                     hx-swap="innerHTML"
+                     hx-target="#display-region"
+                     hx-on:after-request="alert('Request sent!')">
+                    <a>Find Student</a>
+                </div>
+
                 <div class="side-menu-option">
                     <a href="">Add Student</a>
                 </div>
                 <div class="side-menu-option">
                     <a href="">Modify Student Data</a>
                 </div>
+
                 <div class="side-menu-option">
                     <a href="">Add Curriculum</a>
                 </div>

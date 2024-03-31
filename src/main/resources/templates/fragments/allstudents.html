@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div style="height: 90%">
+    <div class="student-data">
         <ul th:each="stu: ${students}" >
-            <h2 th:text="${stu.getRollNumber()}"></h2>
+            <h3 th:text="${stu.getRollNumber()}"></h3>
 <!--            <li th:text="${stu.getRollNumber()}"></li>-->
             <li th:text="${stu.getName()}"></li>
             <li th:text="${stu.getDepartment()}"></li>
                 <ul th:each="course: ${stu.getCurrentCoursesEnrolled()}">
-                    <li th:text="${course}"></li>
+                    <li th:text="|${course.getSubCode() +' : '+ course.getSubName()}|"></li>
                 </ul>
             <li th:text="${stu.getDegree()}"></li>
         </ul>

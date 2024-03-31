@@ -23,15 +23,14 @@ public class StudentController {
         return "/fragments/allstudents";
     }
 
-//    @PostMapping(path = "/findRoll")
-//    public String searchStudent(@ModelAttribute("student") Student student){
-//        System.out.println(student);
-//        return "helloPage";
-//    }
+    @GetMapping(path = "/findRoll")
+    public String searchStudent(){
+        return "fragments/findstudent";
+    }
 
-    @GetMapping(path = "/{rollnumber}")
+    @PostMapping(path = "/search/{rollnumber}")
     public String getStudentByRollNumber(Model model,@PathVariable Integer rollnumber){
         model.addAttribute("students",studentRESTController.findStudentByRollNumber(rollnumber));
-        return "fragments/findstudent";
+        return "fragments/allstudents";
     }
 }
