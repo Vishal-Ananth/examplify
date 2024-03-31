@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/student/findRoll}" th:object ="${student}" method="post" >
+            <div>
+                <label>Search Roll Number
+                    <input placeholder="201401001"
+                           required
+                           th:field="*{rollNumber}"
+                           type="number"></label>
+            </div>
+            <button type="submit" class = "btn btn-info col-2">Login</button>
+        </form>
+    </div>
+</body>
+</html>

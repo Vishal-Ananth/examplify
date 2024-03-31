@@ -21,7 +21,7 @@ public class AdminService {
         String db_pwd= adminRepository.checkAdmin(admin.getUsername());
         if(Objects.equals(admin.getPassword(), db_pwd)){
             System.out.println("Login Successful");
-            return("login/login-complete");
+            return("home/index");
         }
         return ("login/error-page");
     }

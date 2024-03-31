@@ -10,18 +10,22 @@ a{
 }
 
 .header{
+    position: fixed;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:hsl(0, 0%, 98%);
     margin-bottom: 10px;
     height: 100px;
+    width: 100%;
+    overflow: hidden;
 }
 
-#logo{
+.header #logo{
     width: 95px;
     height: 95px;
-    position: absolute;
+    position: fixed;
     top: 5px;
     left: 50px;
 }
@@ -86,3 +90,12 @@ a{
     cursor: pointer;
 }
 
+#display-region{
+    position: relative;
+    top: 150px;
+    left: 15%;
+    right: 3%;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}

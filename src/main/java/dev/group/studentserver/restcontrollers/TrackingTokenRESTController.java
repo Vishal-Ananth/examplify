@@ -1,4 +1,4 @@
-package dev.group.studentserver.controller;
+package dev.group.studentserver.restcontrollers;
 
 import dev.group.studentserver.model.TrackingToken;
 import dev.group.studentserver.service.TrackingTokenService;
@@ -8,11 +8,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/examtracking")
-public class TrackingTokenController {
+public class TrackingTokenRESTController {
 
     private final TrackingTokenService trackingTokenService;
 
-    public TrackingTokenController(TrackingTokenService trackingTokenService) {
+    public TrackingTokenRESTController(TrackingTokenService trackingTokenService) {
         this.trackingTokenService = trackingTokenService;
     }
 

@@ -31,4 +31,10 @@ public class AdminController {
     public String showHelloPage(){
         return "helloPage";
     }
+
+    @GetMapping("/toStudent")
+    public String goToStudent(){
+        return "/home/student";
+    }
+
 }

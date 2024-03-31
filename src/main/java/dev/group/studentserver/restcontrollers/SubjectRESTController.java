@@ -1,7 +1,6 @@
-package dev.group.studentserver.controller;
+package dev.group.studentserver.restcontrollers;
 
 import dev.group.studentserver.model.Subject;
-import dev.group.studentserver.service.StudentService;
 import dev.group.studentserver.service.SubjectService;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,11 +8,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/subject")
-public class SubjectController {
+public class SubjectRESTController {
 
     private final SubjectService subjectService;
 
-    public SubjectController(SubjectService subjectService) {
+    public SubjectRESTController(SubjectService subjectService) {
         this.subjectService = subjectService;
     }
 

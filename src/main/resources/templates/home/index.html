@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
     <title>Examplify Portal</title>
-    <link rel="stylesheet" href="../styles.css">
+
 </head>
 <body>
     <div class="main-menu">
         <div class="header">
-            <img src="../images/rec-logo.png" alt="logo" id="logo">
+            <img src="/images/rec-logo.png" alt="logo" id="logo">
             <h1>Examplify</h1>
         </div>       
         <div class="main-body">
             
             <a href="../home/allotment.html" id="main-menu-option-card">
                 <div class="main-menu-option">
-                    <img src="../images/schedule.svg" alt="schedule logo" id="main-menu-option-img">                    <h4>Manage Allotment</h4>
+                    <img src="/images/schedule.svg" alt="schedule logo" th:id="main-menu-option-img">                    <h4>Manage Allotment</h4>
                 </div>
             </a>
 
             <a href="../home/tracking.html">
                 <div class="main-menu-option">
-                    <img src="../images/check.png" alt="tracking logo" id="main-menu-option-img">
+                    <img src="/images/check.png" alt="tracking logo" th:id="main-menu-option-img">
                     <h4>Tracking</h4>
                 </div>
             </a>
             
             <a href="../home/teacher.html">
                 <div class="main-menu-option">
-                    <img src="../images/invigilator.svg" alt="invigilator logo" id="main-menu-option-img">
+                    <img src="/images/invigilator.svg" alt="invigilator logo" th:id="main-menu-option-img">
                     <h4>Manage Invigilators</h4>
                 </div>
             </a>
 
-            <a href="../home/student.html">
+            <a th:href="@{'/admin/toStudent'}">
                 <div class="main-menu-option">
-                    <img src="../images/student.svg" alt="student logo" id="main-menu-option-img">
+                    <img src="/images/student.svg" alt="student logo" th:id="main-menu-option-img">
                     <h4>Manage Students</h4>
                 </div>
             </a>
+
         </div>
     </div>
 </body>
