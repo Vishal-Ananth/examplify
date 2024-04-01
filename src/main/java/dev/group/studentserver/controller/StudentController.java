@@ -31,6 +31,7 @@ public class StudentController {
     @PostMapping(path = "/search/{rollnumber}")
     public String getStudentByRollNumber(Model model,@PathVariable Integer rollnumber){
         model.addAttribute("students",studentRESTController.findStudentByRollNumber(rollnumber));
+        model.addAttribute("link", "/student/search/"+rollnumber);
         return "fragments/allstudents";
     }
 }

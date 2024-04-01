@@ -5,12 +5,16 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Admin Login</title>
 </head>
 <body>
-<div class="container">
-    <h1>Login</h1>
+<div class="header">
+    <a href="/index.html"><img src="/images/rec-logo.png" alt="logo" id="logo"></a>
+    <h1>Admin Portal</h1>
+</div>
+<div id="login-form">
+    <h2>Login</h2>
     <form th:action="@{/admin/verify}" th:object = "${admin}" method="post" >
         <label>Username :
             <input type="text" th:field="*{username}" placeholder="username" required >
@@ -23,7 +27,7 @@
                    type="password">
         </label>
         <br>
-        <button type="submit"">Login</button>
+        <button type="submit">Login</button>
     </form>
 </div>
 </body>
