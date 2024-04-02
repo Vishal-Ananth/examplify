@@ -90,9 +90,10 @@ a{
     border-color: black;
     border-width: 2px;
     width: 200px;
-    height:100%;
+    /*height:100%;*/
     padding-top: 1.5%;
     /* margin-top: 0px; */
+    overflow: scroll;
 }
 
 .side-menu-option{
@@ -116,20 +117,43 @@ a{
     left: 14%;
     right: 2%;
     bottom: 3%;
-
+    position: fixed;
     overflow: auto;
+
+    padding: 10px;
+
     display: flex;
     justify-content: center;
     align-items: first baseline;
-    
 }
 
-#student-data-table{
-    padding: 20px;
-    text-align: left;
-    border-bottom: 1px solid #000000;
+#student-data-table {
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    width: 100%;
+
 }
 
-#student-data-table tr:hover{
-    background-color: hsl(0, 0%, 80%);
+#student-data-table tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+#student-data-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+#student-data-table td {
+    border: none; /* No borders for table cells */
+    padding: 8px;
+    text-align: left; /* Left-align all cell data */
+    border-bottom: 1px solid #ddd;
+}
+
+#student-data-table th{
+    border-bottom: 1px solid #ddd;
+}
+
+#student-data-table table{
+    width: 100%;
 }

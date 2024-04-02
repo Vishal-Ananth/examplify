@@ -23,7 +23,7 @@ public class StudentRESTController {
     }
 
     @Transactional
-    @PostMapping("/add")
+    @PostMapping("/addstudent")
     public String createStudent(@RequestBody Student student){
         studentService.createStudent(student);
         return "Student added to database";
