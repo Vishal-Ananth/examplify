@@ -37,4 +37,8 @@ public class AdminController {
         return "/home/student";
     }
 
+    @GetMapping("/main")
+    public String toMain(){
+        return "/home/index";
+    }
 }

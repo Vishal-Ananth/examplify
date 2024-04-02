@@ -47,8 +47,13 @@ public class StudentController {
     }
 
     @PostMapping(value = "/add/info")
-    public String addStudentInfo(@ModelAttribute("stud") Student student){
-        studentRESTController.createStudent(student);
-        return null;
+    public String addStudentInfo(Model model,@ModelAttribute("stud") Student student){
+//        studentRESTController.createStudent(student);
+        System.out.println(student);
+        if(student==null){
+            return null;
+        }
+        model.addAttribute("student",studentRESTController.createStudent(student));
+        return "fragments/addstudent";
     }
 }

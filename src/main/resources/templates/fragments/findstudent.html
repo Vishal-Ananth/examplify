@@ -8,8 +8,8 @@
     <title>Specific student</title>
 </head>
 <body>
-
-    <div style="padding: 10px">
+    <div style="padding: 10px" id="adding-student-form">
+        <h2>Search Student</h2>
         <form th:action="@{/student/search}" th:object="${stud}" method="post" >
             <label>Registration Number :
                 <input type="text"

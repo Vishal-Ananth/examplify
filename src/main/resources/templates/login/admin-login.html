@@ -15,7 +15,7 @@
 </div>
 <div id="login-form">
     <h2>Login</h2>
-    <form th:action="@{/admin/verify}" th:object = "${admin}" method="post" >
+    <form th:action="@{/admin/verify}" th:object = "${admin}" method="post">
         <label>Username :
             <input type="text" th:field="*{username}" placeholder="username" required >
         </label>

@@ -1,7 +1,7 @@
 body {
     background-color:#ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0%;
+    margin: 0;
 }
 
 a{
@@ -27,15 +27,17 @@ a{
 
 .header{
     position: fixed;
-    top: 0px;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:hsl(0, 0%, 98%);
+    background-color:hsl(0, 0%, 95%);
     margin-bottom: 10px;
     height: 100px;
     width: 100%;
     overflow: hidden;
+    border-bottom: solid black 2px;
+    border-radius:8px;
 }
 
 .header #logo{
@@ -50,8 +52,10 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
 }
 
 .main-menu-option{
@@ -62,9 +66,7 @@ a{
     flex-direction: column;
     padding: 5px;
     margin: 15px;
-    border: solid;
-    border-width: 1.5px;
-    border-color: black;
+    border: 1.5px solid black;
     border-radius: 10px;   
 }
 
@@ -85,10 +87,9 @@ a{
     position:fixed;
     top: 110px;
     left: 5px;
-    bottom: 3%;
-    border: solid;
-    border-color: black;
-    border-width: 2px;
+    bottom: 1%;
+    border: 2px solid black;
+    border-radius: 8px;
     width: 200px;
     /*height:100%;*/
     padding-top: 1.5%;
@@ -109,15 +110,15 @@ a{
 }
 
 #display-region{
-    border: solid;
-    border-width: 2px;
+    border: 2px solid;
+    border-radius: 8px;
     
     position: fixed;
     top: 110px;
     left: 14%;
-    right: 2%;
-    bottom: 3%;
-    position: fixed;
+    right: 1%;
+    bottom: 1%;
+
     overflow: auto;
 
     padding: 10px;
@@ -147,13 +148,43 @@ a{
     border: none; /* No borders for table cells */
     padding: 8px;
     text-align: left; /* Left-align all cell data */
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1.5px solid #ddd;
 }
 
 #student-data-table th{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
 }
 
 #student-data-table table{
     width: 100%;
+}
+
+#adding-student-form {
+    /*border: 1px solid #ccc; !* Neat thin border *!*/
+    padding: 20px; /* Adjust padding as needed */
+    width: 50%; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#adding-student-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; /* Adjust margin as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+#adding-student-form button[type="submit"] {
+    background-color: #007bff; /* Example button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#adding-student-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Example hover color */
 }
