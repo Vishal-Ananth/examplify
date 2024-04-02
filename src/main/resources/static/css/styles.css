@@ -116,10 +116,20 @@ a{
     left: 14%;
     right: 2%;
     bottom: 3%;
-    position: fixed;
+
     overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
     
 }
 
-.student-data{
+#student-data-table{
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #000000;
+}
+
+#student-data-table tr:hover{
+    background-color: hsl(0, 0%, 80%);
 }
