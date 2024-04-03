@@ -21,7 +21,7 @@ public class SubjectRESTController {
         return subjectService.getAllSubjects();
     }
 
-    @PostMapping("add")
+    @PostMapping("/addsubject")
     public String createSubject(@RequestBody Subject subject){
         subjectService.createSubject(subject);
         return "Subject added to database";

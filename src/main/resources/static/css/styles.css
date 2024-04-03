@@ -72,7 +72,7 @@ select{
     flex-direction: column;
     padding: 5px;
     margin: 15px;
-    border: 1.5px solid black;
+    border: 2px solid black;
     border-radius: 10px;   
 }
 
@@ -134,7 +134,7 @@ select{
     align-items: first baseline;
 }
 
-#student-data-table {
+#data-table {
     display: flex;
     justify-content: center;
     border-collapse: collapse;
@@ -142,28 +142,28 @@ select{
 
 }
 
-#student-data-table tbody tr {
+#data-table tbody tr {
     border-bottom: 1px solid #ccc;
 }
 
-#student-data-table tbody tr:hover {
+#data-table tbody tr:hover {
     background-color: #f0f0f0;
 }
 
-#student-data-table td {
+#data-table td {
     border: none; /* No borders for table cells */
     padding: 8px;
     text-align: left; /* Left-align all cell data */
-    border-bottom: 1.5px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 
-#student-data-table th{
+#data-table th{
     border-bottom: 2px solid rgba(0, 0, 0, 0.7);
     text-align: left;
 
 }
 
-#student-data-table table{
+#data-table table{
     width: 100%;
 }
 

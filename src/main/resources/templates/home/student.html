@@ -50,8 +50,11 @@
                      hx-target="#display-region">
                     <a>Course Information</a>
                 </div>
-                <div class="side-menu-option">
-                    <a href="">Add Curriculum</a>
+                <div class="side-menu-option"
+                     hx-get="http://localhost:8080/subject/add"
+                     hx-swap="innerHTML"
+                     hx-target="#display-region">
+                    <a>Add Curriculum</a>
                 </div>
                 <div class="side-menu-option">
                     <a href="">Modify Curriculum</a>

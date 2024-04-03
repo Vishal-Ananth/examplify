@@ -1,9 +1,7 @@
 package dev.group.studentserver.controller;
 
-import dev.group.studentserver.model.Admin;
 import dev.group.studentserver.model.Student;
 import dev.group.studentserver.restcontrollers.StudentRESTController;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
