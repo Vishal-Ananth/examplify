@@ -12,7 +12,7 @@
         <h2>Search Student</h2>
         <form th:action="@{/student/search}" th:object="${stud}" method="post" >
             <label>Registration Number :
-                <input type="text"
+                <input type="search"
                         placeholder="rollnumber"
                         th:field="*{rollNumber}"
                         >

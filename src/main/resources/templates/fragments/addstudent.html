@@ -20,28 +20,44 @@
                    th:field="*{name}">
         </label>
         <label>Degree :
-            <input type="text"
-                   placeholder="Degree"
-                   th:field="*{degree}">
-        </label>
-        <label>Department :
-            <input type="text"
-                   placeholder="Department"
-                   th:field="*{department}">
-        </label>
-<!--        <label>Degree :-->
 <!--            <input type="text"-->
-<!--                   placeholder="rollnumber"-->
+<!--                   placeholder="Degree"-->
 <!--                   th:field="*{degree}">-->
-<!--        </label>-->
+            <select th:field="*{degree}" placeholder="Degree" size="1" onfocus="this.size = 5" onchange="this.blur()" onblur="this.size = 1; this.blur()">
+                <option value="Bachelor of Technology">Bachelor of Technology</option>
+                <option value="Bachelor of Engineering">Bachelor of Engineering</option>
+                <option value="Bachelor of Architecture">Bachelor of Architecture</option>
+                <option value="Master of Technology">Master of Technology</option>
+                <option value="Master of Business Administration">Master of Business Administration</option>
+            </select>
+        </label>
+        <br>
+        <label>Department :
+<!--            <input type="text"-->
+<!--                   placeholder="Department"-->
+<!--                   th:field="*{department}">-->
+            <select th:field="*{department}" size="1" onfocus="this.size = 8" onchange="this.blur()" onblur="this.size = 1; this.blur()">
+                <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                <option value="Computer Science and Business Systems">Computer Science and Business Systems</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
+                <option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
+                <option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
+                <option value="Aeronautical Engineering">Aeronautical Engineering</option>
+                <option value="Automobile Engineering">Automobile Engineering</option>
+                <option value="BioMedical Engineering">BioMedical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                <option value="Robotics and Automation">Robotics and Automation</option>
+                <option value="Bio Technology">Bio Technology</option>
+                <option value="Chemical Engineering">Chemical Engineering</option>
+                <option value="Food Technology">Food Technology</option>
+            </select>
+        </label>
         <button type="submit"> Add Student </button>
     </form>
 
 </div>
-<!--<script>-->
-<!--    // JavaScript to assign Thymeleaf value to hx-vals-->
-<!--    const thymeleafValue = document.getElementById('thymeleafValue').innerText;-->
-<!--    document.querySelector('text').setAttribute('hx-vals', thymeleafValue);-->
-<!--</script>-->
 </body>
 </html>

@@ -38,8 +38,11 @@
                      hx-target="#display-region">
                     <a>Add Student</a>
                 </div>
-                <div class="side-menu-option">
-                    <a href="">Modify Student Data</a>
+                <div class="side-menu-option"
+                     hx-get="http://localhost:8080/student/update"
+                     hx-swap="innerHTML"
+                     hx-target="#display-region">
+                    <a>Modify Student Data</a>
                 </div>
 
                 <div class="side-menu-option">

@@ -9,6 +9,12 @@ a{
     color: black;
 }
 
+select{
+    position: relative;
+    z-index: 9999;
+    /*width: 30% !important;*/
+}
+
 #login-form{
     position: fixed;
     display: flex;
@@ -187,4 +193,14 @@ a{
 
 #adding-student-form button[type="submit"]:hover {
     background-color: #0056b3; /* Example hover color */
+}
+
+#adding-student-form label select{
+    appearance: menulist-button;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; /* Adjust margin as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+
+
 }

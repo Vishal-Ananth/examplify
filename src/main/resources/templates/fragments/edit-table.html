@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="student-data-table">
+    <table>
+        <thead>
+        <tr>
+            <th>Registration No</th>
+            <th>Name</th>
+            <th>Degree</th>
+            <th>Department</th>
+            <th>Courses</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stu: ${students}">
+            <td th:text="${stu.getRollNumber()}" contenteditable="true"></td>
+            <td th:text="${stu.getName()}" contenteditable="true"></td>
+            <td th:text="${stu.getDegree()}" contenteditable="true"></td>
+            <td th:text="${stu.getDepartment()}" contenteditable="true"></td>
+            <td >
+                <ul th:each="course: ${stu.getCurrentCoursesEnrolled()}">
+                    <li th:text="|${course.getSubCode() +' : '+ course.getSubName()}|" contenteditable="true"></li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button>Edit</button>
+</div>
+
+</body>
+</html>

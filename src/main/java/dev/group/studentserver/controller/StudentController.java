@@ -18,6 +18,7 @@ public class StudentController {
         this.studentRESTController = studentRESTController;
     }
 
+
     @GetMapping(path = "/allstudents")
     public String getAllStudents(Model model){
         model.addAttribute("students",studentRESTController.getAllStudents());
@@ -46,6 +47,7 @@ public class StudentController {
         return "fragments/addstudent";
     }
 
+
     @PostMapping(value = "/add/info")
     public String addStudentInfo(Model model,@ModelAttribute("stud") Student student){
 //        studentRESTController.createStudent(student);
@@ -55,5 +57,21 @@ public class StudentController {
         }
         model.addAttribute("student",studentRESTController.createStudent(student));
         return "fragments/addstudent";
+    }
+
+    @GetMapping("/update")
+    public String update(Model model){
+        model.addAttribute("stud",new Student());
+        return "fragments/edit-find";
+    }
+
+    @PostMapping(value = "/update/info")
+    public String updateStudentInfo(Model model,@ModelAttribute("stud") Student student){
+        model.addAttribute("students",studentRESTController.findStudentByRollNumber(student.getRollNumber()));
+        if(studentRESTController.findStudentByRollNumber(student.getRollNumber()) == null){
+            return null;
+        }
+        System.out.println(studentRESTController.findStudentByRollNumber(student.getRollNumber()));
+        return "fragments/edit-table";
     }
 }
