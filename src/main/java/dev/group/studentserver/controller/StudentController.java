@@ -20,13 +20,13 @@ public class StudentController {
     @GetMapping(path = "/allstudents")
     public String getAllStudents(Model model){
         model.addAttribute("students",studentRESTController.getAllStudents());
-        return "/fragments/allstudents";
+        return "/fragments/student-fragments/allstudents";
     }
 
     @GetMapping(path = "/findRoll")
     public String searchStudent(Model model){
         model.addAttribute("stud",new Student());
-        return "fragments/findstudent";
+        return "fragments/student-fragments/findstudent";
     }
 
     @PostMapping(value = "/search")
@@ -35,14 +35,14 @@ public class StudentController {
         if(studentRESTController.findStudentByRollNumber(student.getRollNumber()) == null){
             return null;
         }
-        return "fragments/allstudents";
+        return "fragments/student-fragments/allstudents";
 //        return "helloPage";
     }
 
     @GetMapping(path = "/add")
     public String toStudent(Model model){
         model.addAttribute("stud",new Student());
-        return "fragments/addstudent";
+        return "fragments/student-fragments/addstudent";
     }
 
 
@@ -54,13 +54,13 @@ public class StudentController {
             return null;
         }
         model.addAttribute("student",studentRESTController.createStudent(student));
-        return "fragments/addstudent";
+        return "fragments/student-fragments/addstudent";
     }
 
     @GetMapping("/update")
     public String update(Model model){
         model.addAttribute("stud",new Student());
-        return "fragments/edit-find";
+        return "fragments/student-fragments/edit-find";
     }
 
     @PostMapping(value = "/update/info")
@@ -70,7 +70,7 @@ public class StudentController {
             return null;
         }
         System.out.println(studentRESTController.findStudentByRollNumber(student.getRollNumber()));
-        return "fragments/edit-table";
+        return "fragments/student-fragments/edit-table";
     }
 
 

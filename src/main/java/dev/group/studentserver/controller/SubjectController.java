@@ -23,24 +23,41 @@ public class SubjectController {
     @GetMapping("/allsubjects")
     public String getAllCourses(Model model){
         model.addAttribute("courses",subjectRESTController.getAllSubjects());
-        return "fragments/allcourse";
+        return "fragments/subject-fragments/allcourse";
     }
 
     @GetMapping(path = "/add")
-    public String toStudent(Model model){
+    public String toAddStudent(Model model){
         model.addAttribute("sub",new Subject());
-        return "fragments/addsubject";
+        return "fragments/subject-fragments/addsubject";
     }
 
 
     @PostMapping(value = "/add/info")
-    public String addStudentInfo(Model model,@ModelAttribute("sub") Subject subject){
+    public String addCourseInfo(Model model,@ModelAttribute("sub") Subject subject){
 //        studentRESTController.createStudent(student);
         System.out.println(subject);
         if(subject==null){
             return null;
         }
         model.addAttribute("student",subjectRESTController.createSubject(subject));
-        return "fragments/addsubject";
+        return "fragments/subject-fragments/addsubject";
+    }
+
+    @GetMapping(path = "/findsub")
+    public String searchStudent(Model model){
+        model.addAttribute("sub",new Subject());
+        return "fragments/subject-fragments/findsubject";
+    }
+
+    @PostMapping(value = "/search")
+    public String getCourseBySubjectCode(Model model,@ModelAttribute("sub") Subject subject){
+        model.addAttribute("courses",subjectRESTController.getSubjectByCode(subject.getSubCode()));
+        if(subjectRESTController.getSubjectByCode(subject.getSubCode()) == null){
+            return null;
+        }
+        System.out.println(subjectRESTController.getSubjectByCode(subject.getSubCode()));
+        return "fragments/subject-fragments/allcourse";
+//        return "helloPage";
     }
 }

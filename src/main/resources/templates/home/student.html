@@ -51,6 +51,12 @@
                     <a>Course Information</a>
                 </div>
                 <div class="side-menu-option"
+                     hx-get="http://localhost:8080/subject/findsub"
+                     hx-swap="innerHTML"
+                     hx-target="#display-region">
+                    <a>Find Course</a>
+                </div>
+                <div class="side-menu-option"
                      hx-get="http://localhost:8080/subject/add"
                      hx-swap="innerHTML"
                      hx-target="#display-region">

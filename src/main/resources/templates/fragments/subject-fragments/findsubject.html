@@ -9,16 +9,16 @@
 </head>
 <body>
 <div style="padding: 10px" id="adding-student-form">
-    <h2>Search Student</h2>
-    <form th:action="@{/student/update/info}" th:object="${stud}" method="post" >
-        <label>Registration Number :
+    <h2>Search Course</h2>
+    <form th:action="@{/subject/search}" th:object="${sub}" method="post" >
+        <label>Subject Code :
             <input type="search"
-                   placeholder="rollnumber"
-                   th:field="*{rollNumber}"
+                   placeholder="subject code"
+                   th:field="*{subCode}"
             >
         </label>
         <button type="submit"
-                hx-post="http://localhost:8080/student/update/info" hx-vals="thymeleafValue"
+                hx-post="http://localhost:8080/subject/search" hx-vals="thymeleafValue"
                 hx-swap="innerHTML"
                 hx-target="#display-region"> Search </button>
     </form>
