@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/subject")
+@RequestMapping("/subject")
 public class SubjectRESTController {
 
     private final SubjectService subjectService;
