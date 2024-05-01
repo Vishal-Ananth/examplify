@@ -22,6 +22,9 @@
                 <th>Name</th>
                 <th>Subject</th>
                 <th>Answer Script ID</th>
+                <th>Attendance Date</th>
+                <th>Attendance Time</th>
+
             </tr>
             </thead>
             <tbody>
@@ -30,6 +33,9 @@
                 <td th:text="${tok.getStudents().name}"></td>
                 <td th:text="${tok.getSubject().getSubCode()}"></td>
                 <td th:text="${tok.getAnswerScriptId()}"></td>
+                <td th:text="${tok.getExamDate()}"></td>
+                <td th:text="${tok.getAttendanceTime()}"></td>
+
             </tr>
             </tbody>
         </table>

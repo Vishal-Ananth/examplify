@@ -51,8 +51,8 @@ select{
 }
 
 .header #logo {
-    width: 50px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the height as needed */
+    width: 50px;
+    height: 20px; 
     position: fixed;
     top: 5px;
     left: 50px;

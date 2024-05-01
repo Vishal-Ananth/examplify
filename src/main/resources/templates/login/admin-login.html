@@ -12,16 +12,16 @@
 </head>
 
 <body>
-<div class="container mt-5">
+<div class="container mt-5 justify-content-center ">
     <div class="row justify-content-center align-items-center">
         <div class="col-md-6">
             <div class="content-column">
                 <div class="header">
-                    <h3 class="mb-0">Admin Portal</h3>
-                </div>
+                    <h2 class="mb-0">Admin Portal</h2>
+                </div> <br>
                 <div id="login-form">
-                    <h2>Login</h2>
-                    <form th:action="@{/admin/verify}" th:object="${admin}" method="post">
+                    <h4>Login</h4>
+                    <form th:action="@{/admin/verify}" th:object="${admin}" method="post" class="form-control-sm">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username:</label>
                             <input type="text" class="form-control" id="username" th:field="*{username}" placeholder="Enter username" required>
@@ -39,7 +39,7 @@
         <div class="col-md-6">
             <div class="logo-container text-center">
                 <a th:href="@{/index.html}"><img src="/images/rec-logo.png" alt="logo" id="logo" style="width: 150px;"></a>
-                <h2 class="mt-3">EXAMPLIFY</h2>
+             <h2 class="mt-3"> <strong>   EXAMPLIFY </strong></h2>
             </div>
         </div>
     </div>
