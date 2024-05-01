@@ -41,4 +41,11 @@ public class AdminController {
     public String toMain(){
         return "/home/index";
     }
+
+    @GetMapping("/toTracking")
+    public String goToTracking(){
+        return "/home/tracking";
+    }
+
+
 }
