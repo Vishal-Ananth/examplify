@@ -11,6 +11,17 @@
         .menu-icon {
             width: 100px; /* Set your desired width */
             height: auto; /* Maintain aspect ratio */
+            margin: 0 auto; /* Center the icon horizontally */
+            display: block;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        /* Add hover effect */
+        .card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
@@ -22,19 +33,47 @@
                 <a href="/admin/main"><img src="/images/rec-logo.png" alt="logo" id="logo" style="width: 150px; height: auto;"></a>
                 <h1 class="mt-3">Examplify</h1>
             </div>
-            <div class="list-group mt-4">
-                <a href="../home/allotment.html" class="list-group-item list-group-item-action">
-                    <img src="/images/schedule.svg" alt="schedule logo" class="menu-icon me-3"> Manage Allotment
-                </a>
-                <a href="/admin/toTracking" class="list-group-item list-group-item-action">
-                    <img src="/images/ticket.svg" alt="tracking logo" class="menu-icon me-3"> Tracking
-                </a>
-                <a href="../home/teacher.html" class="list-group-item list-group-item-action">
-                    <img src="/images/invigilator.svg" alt="invigilator logo" class="menu-icon me-3"> Manage Invigilators
-                </a>
-                <a href="/admin/toStudent" class="list-group-item list-group-item-action">
-                    <img src="/images/student.svg" alt="student logo" class="menu-icon me-3"> Manage Students
-                </a>
+            <div class="row row-cols-2 g-4">
+                <div class="col">
+                    <div class="card">
+                        <a href="../home/allotment.html" class="list-group-item list-group-item-action">
+                            <img src="/images/schedule.svg" alt="schedule logo" class="card-img-top menu-icon">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Allotment</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="/admin/toTracking" class="list-group-item list-group-item-action">
+                            <img src="/images/ticket.svg" alt="tracking logo" class="card-img-top menu-icon">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Tracking</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="../home/teacher.html" class="list-group-item list-group-item-action">
+                            <img src="/images/invigilator.svg" alt="invigilator logo" class="card-img-top menu-icon">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Invigilators</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <a href="/admin/toStudent" class="list-group-item list-group-item-action">
+                            <img src="/images/student.svg" alt="student logo" class="card-img-top menu-icon">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Manage Students</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
