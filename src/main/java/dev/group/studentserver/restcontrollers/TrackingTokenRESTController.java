@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/examtracking")
+@RequestMapping("tracking")
 public class TrackingTokenRESTController {
 
     private final TrackingTokenService trackingTokenService;
@@ -29,5 +29,10 @@ public class TrackingTokenRESTController {
     @GetMapping("all")
     public List<TrackingToken> getAllTrackingTicket(){
         return trackingTokenService.getAllTrackingTicket();
+    }
+
+    @GetMapping("{rollnumber}")
+    public List<TrackingToken> findTrackingToken(@PathVariable Integer rollnumber ){
+        return trackingTokenService.getTrackingTokenByRollNumber(rollnumber);
     }
 }

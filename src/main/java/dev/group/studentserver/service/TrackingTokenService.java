@@ -36,4 +36,8 @@ public class TrackingTokenService {
     public List<TrackingToken> getAllTrackingTicket() {
         return trackingTokenRepository.findAll();
     }
+
+    public List<TrackingToken> getTrackingTokenByRollNumber(Integer rollnumber) {
+        return trackingTokenRepository.findTrackingTokensByStudents_RollNumber(rollnumber);
+    }
 }
