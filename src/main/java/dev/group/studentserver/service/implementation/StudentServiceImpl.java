@@ -2,6 +2,7 @@ package dev.group.studentserver.service.implementation;
 
 import dev.group.studentserver.dao.StudentRepository;
 import dev.group.studentserver.model.Student;
+import dev.group.studentserver.model.Subject;
 import dev.group.studentserver.service.StudentService;
 import org.springframework.stereotype.Service;
 
@@ -29,4 +30,11 @@ public class StudentServiceImpl implements StudentService {
     public Student findStudentByRollNumber(Integer rollNumber) {
         return studentRepository.findByRollNumber(rollNumber);
     }
+
+    @Override
+    public List<Subject> findSubByRollnumber(Integer rollnumber) {
+        Student student = findStudentByRollNumber(rollnumber);
+        return student.getCurrentCoursesEnrolled();
+    }
+
 }
