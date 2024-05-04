@@ -1,31 +1,13 @@
 package dev.group.studentserver.service;
 
-import dev.group.studentserver.dao.SubjectRepository;
 import dev.group.studentserver.model.Subject;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class SubjectService {
+public interface SubjectService {
+    List<Subject> getAllSubjects();
 
-    private final SubjectRepository subjectRepository;
+    void createSubject(Subject subject);
 
-    public SubjectService(SubjectRepository subjectRepository) {
-        this.subjectRepository = subjectRepository;
-    }
-
-
-
-    public List<Subject> getAllSubjects() {
-        return subjectRepository.findAll();
-    }
-
-    public void createSubject(Subject subject) {
-        subjectRepository.save(subject);
-    }
-
-    public Subject getSubjectByCode(String subCode) {
-        return subjectRepository.findBySubCode(subCode);
-    }
+    Subject getSubjectByCode(String subCode);
 }

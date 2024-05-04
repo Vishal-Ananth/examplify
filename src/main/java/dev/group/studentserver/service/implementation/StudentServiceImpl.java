@@ -37,4 +37,11 @@ public class StudentServiceImpl implements StudentService {
         return student.getCurrentCoursesEnrolled();
     }
 
+    @Override
+    public String deleteStudent(Integer rollNumber) {
+        Student student = findStudentByRollNumber(rollNumber);
+        studentRepository.delete(student);
+        return "Student "+rollNumber+" has been removed from the system";
+    }
+
 }

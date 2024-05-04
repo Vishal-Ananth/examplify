@@ -1,7 +1,7 @@
 package dev.group.studentserver.restcontrollers;
 
 import dev.group.studentserver.model.TrackingToken;
-import dev.group.studentserver.service.TrackingTokenService;
+import dev.group.studentserver.service.implementation.TrackingTokenServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,10 +10,10 @@ import java.util.List;
 @RequestMapping("api/examtracking")
 public class TrackingTokenRESTController {
 
-    private final TrackingTokenService trackingTokenService;
+    private final TrackingTokenServiceImpl trackingTokenServiceImpl;
 
-    public TrackingTokenRESTController(TrackingTokenService trackingTokenService) {
-        this.trackingTokenService = trackingTokenService;
+    public TrackingTokenRESTController(TrackingTokenServiceImpl trackingTokenServiceImpl) {
+        this.trackingTokenServiceImpl = trackingTokenServiceImpl;
     }
 
     @GetMapping("/")
@@ -23,11 +23,11 @@ public class TrackingTokenRESTController {
 
     @PostMapping("link")
     public String createTrackingTicket(@RequestParam Integer rollNumber,@RequestParam String subCode, @RequestParam String answerScriptId){
-        return trackingTokenService.createTrackingTicket(rollNumber,subCode,answerScriptId);
+        return trackingTokenServiceImpl.createTrackingTicket(rollNumber,subCode,answerScriptId);
     }
 
     @GetMapping("all")
     public List<TrackingToken> getAllTrackingTicket(){
-        return trackingTokenService.getAllTrackingTicket();
+        return trackingTokenServiceImpl.getAllTrackingTicket();
     }
 }

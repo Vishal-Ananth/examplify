@@ -35,6 +35,12 @@ public class StudentRESTController {
         return studentService.findStudentByRollNumber(rollNumber);
     }
 
+    @DeleteMapping("delete/{rollnumber}")
+    public String deleteStudent(Integer rollNumber){
+        return studentService.deleteStudent(rollNumber);
+    }
+
+
     @GetMapping(path = "course/{rollnumber}")
     public List<Subject> findSub(@PathVariable Integer rollnumber){
         return studentService.findSubByRollnumber(rollnumber);

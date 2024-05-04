@@ -1,6 +1,6 @@
 package dev.group.studentserver.controller;
 import dev.group.studentserver.model.Admin;
-import dev.group.studentserver.service.AdminService;
+import dev.group.studentserver.service.implementation.AdminServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("admin")
 public class AdminController {
 
-    private final AdminService adminService;
+    private final AdminServiceImpl adminServiceImpl;
 
-    public AdminController(AdminService adminService) {
-        this.adminService = adminService;
+    public AdminController(AdminServiceImpl adminServiceImpl) {
+        this.adminServiceImpl = adminServiceImpl;
     }
 
     @GetMapping("/showLoginForm")
@@ -24,7 +24,7 @@ public class AdminController {
     @PostMapping("/verify")
     public String checkAdmin(@ModelAttribute("admin") Admin admin){
         System.out.println(admin);
-        return adminService.checkAdmin(admin);
+        return adminServiceImpl.checkAdmin(admin);
     }
 
     @GetMapping("/test")

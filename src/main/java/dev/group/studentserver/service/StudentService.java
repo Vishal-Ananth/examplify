@@ -12,5 +12,7 @@ public interface StudentService {
 
     Student findStudentByRollNumber(Integer rollNumber);
 
-    List<Subject> findSubByRollnumber(Integer rollnumber);
+    List<Subject> findSubByRollnumber(Integer rollNumber);
+
+    String deleteStudent(Integer rollNumber);
 }
