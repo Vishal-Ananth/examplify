@@ -14,6 +14,9 @@ select{
     z-index: 9999;
     /*width: 30% !important;*/
 }
+#logo {
+    max-width: 75px;
+}
 
 #login-form{
     position: fixed;
@@ -42,13 +45,14 @@ select{
     height: 100px;
     width: 100%;
     overflow: hidden;
+
     border-bottom: solid black 2px;
     border-radius:8px;
 }
 
-.header #logo{
-    width: 95px;
-    height: 95px;
+.header #logo {
+    width: 50px;
+    height: 20px; 
     position: fixed;
     top: 5px;
     left: 50px;
