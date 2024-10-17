@@ -2,6 +2,7 @@ package dev.group.studentserver.restcontrollers;
 
 import java.util.List;
 import dev.group.studentserver.model.Student;
+import dev.group.studentserver.model.Subject;
 import dev.group.studentserver.service.StudentService;
 import jakarta.transaction.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,17 @@ public class StudentRESTController {
     @GetMapping(value = "{rollNumber}")
     public Student findStudentByRollNumber(@PathVariable Integer rollNumber){
         return studentService.findStudentByRollNumber(rollNumber);
+    }
+
+    @DeleteMapping("delete/{rollnumber}")
+    public String deleteStudent(Integer rollNumber){
+        return studentService.deleteStudent(rollNumber);
+    }
+
+
+    @GetMapping(path = "course/{rollnumber}")
+    public List<Subject> findSub(@PathVariable Integer rollnumber){
+        return studentService.findSubByRollnumber(rollnumber);
     }
 
 }
